@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+Settings for blog
 Django settings for blog project.
 
 For more information on this file, see
