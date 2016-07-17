@@ -95,4 +95,6 @@ Deployment
 
 
 
-
+sudo -u postgres createuser -D -A -P blog
+sudo -u postgres createdb -O blog blog 
+python manage.py makemigrations
