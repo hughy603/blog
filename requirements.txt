@@ -1,1 +1,1 @@
-blog/requirements/production.txt
+-r blog/requirements/production.txt
