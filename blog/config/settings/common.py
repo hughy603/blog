@@ -46,6 +46,7 @@ THIRD_PARTY_APPS = (
 LOCAL_APPS = (
     # custom users app
     'blog.users.apps.UsersConfig',
+    'blog.blog.apps.BlogConfig',
     # Your stuff: custom apps go here
 )
 
