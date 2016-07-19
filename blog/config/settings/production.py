@@ -142,9 +142,6 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-import os
-if 'RDS_DB_NAME' not in os.environ:
-    raise Exception("No DB Name is set")
 DATABASES['default'] = {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'NAME': env('RDS_DB_NAME'),
