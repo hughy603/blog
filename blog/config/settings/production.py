@@ -147,7 +147,7 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-if env('DATABASE_URL', None):
+if False:#env('DATABASE_URL', None):
     pass
 else:
     DATABASES['default'] = {
