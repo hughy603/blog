@@ -40,7 +40,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
 MIDDLEWARE_CLASSES = WHITENOISE_MIDDLEWARE + MIDDLEWARE_CLASSES
 
-#RAVEN_MIDDLEWARE = (
+# RAVEN_MIDDLEWARE = (
 #    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
 #MIDDLEWARE_CLASSES = RAVEN_MIDDLEWARE + MIDDLEWARE_CLASSES
 
@@ -112,7 +112,9 @@ MEDIA_URL = 'https://s3.amazonaws.com/%s/' % AWS_STORAGE_BUCKET_NAME
 
 # Static Assets
 # ------------------------
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# TODO TODO TODO TODO   WHAT IS WHITENOISE    TODO TODO TODO
+# TODO TODO TODO TODO   AWS DIDNT LOG This    TODO TODO TODO
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # EMAIL
@@ -145,14 +147,17 @@ TEMPLATES[0]['OPTIONS']['loaders'] = [
 # DATABASE CONFIGURATION
 # ------------------------------------------------------------------------------
 # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-DATABASES['default'] = {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': env('RDS_DB_NAME'),
-    'USER': env('RDS_USERNAME'),
-    'PASSWORD': env('RDS_PASSWORD'),
-    'HOST': env('RDS_HOSTNAME'),
-    'PORT': env('RDS_PORT'),
-}
+if env('DATABASE_URL', None):
+    pass
+else:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('RDS_DB_NAME'),
+        'USER': env('RDS_USERNAME'),
+        'PASSWORD': env('RDS_PASSWORD'),
+        'HOST': env('RDS_HOSTNAME'),
+        'PORT': env('RDS_PORT'),
+    }
 
 # CACHING
 # ------------------------------------------------------------------------------
