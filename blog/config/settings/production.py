@@ -39,9 +39,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # See: https://whitenoise.readthedocs.io/
 WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
 MIDDLEWARE_CLASSES = WHITENOISE_MIDDLEWARE + MIDDLEWARE_CLASSES
-RAVEN_MIDDLEWARE = (
-    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
-MIDDLEWARE_CLASSES = RAVEN_MIDDLEWARE + MIDDLEWARE_CLASSES
+
+#RAVEN_MIDDLEWARE = (
+#    'raven.contrib.django.raven_compat.middleware.SentryResponseErrorIdMiddleware', )
+#MIDDLEWARE_CLASSES = RAVEN_MIDDLEWARE + MIDDLEWARE_CLASSES
 
 
 # SECURITY CONFIGURATION
