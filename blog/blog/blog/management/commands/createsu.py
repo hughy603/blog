@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from users.models import User
+from blog.users.models import User
 
 import os
 
